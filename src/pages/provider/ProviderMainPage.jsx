@@ -9,7 +9,6 @@ import { FaEye } from "react-icons/fa6";
 import { IoTrash } from "react-icons/io5";
 import toast from "react-hot-toast";
 import { FaExclamationCircle } from 'react-icons/fa';
-import JobSearchCard from './components/JobSearchCard';
 
 function ProviderMainPage() {
   const { profileData } = useContext(AuthContext);
