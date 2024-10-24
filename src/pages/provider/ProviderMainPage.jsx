@@ -9,6 +9,7 @@ import { FaEye } from "react-icons/fa6";
 import { IoTrash } from "react-icons/io5";
 import toast from "react-hot-toast";
 import { FaCheckCircle, FaExclamationCircle } from 'react-icons/fa';
+import { LuLoader2 } from "react-icons/lu";
 
 function ProviderMainPage() {
   const { profileData } = useContext(AuthContext);
