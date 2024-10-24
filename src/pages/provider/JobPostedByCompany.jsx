@@ -10,6 +10,7 @@ import { AuthContext } from '../../contexts/AuthContext';
 import CustomBreadCrumbs from '../../components/CustomBreadCrumbs';
 import { JobCardSkeleton } from '../../components/JobCard';
 import { VerticalBar } from '../seeker/CompanyPage';
+import { axiosInstance } from '../../utils/axiosInstance';
 
 const JobPostedByCompany = () => {
     const { profileData } = useContext(AuthContext);
