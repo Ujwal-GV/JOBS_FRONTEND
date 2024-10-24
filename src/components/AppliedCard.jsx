@@ -58,7 +58,7 @@ const AppliedCard = ({ data   }) => {
         </div>
         <div className="p-1 border border-gray-100 rounded-lg">
           <img
-            src={companyData?.img?.url}
+            src={companyData?.img}
             className="h-[60px] w-[60px] p-1 text-[0.5rem] "
             alt={companyData?.company_name}
           />
