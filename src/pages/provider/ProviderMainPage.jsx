@@ -8,12 +8,14 @@ import SeachInput from "../../components/SeachInput";
 import { FaEye } from "react-icons/fa6";
 import { IoTrash } from "react-icons/io5";
 import toast from "react-hot-toast";
-import { FaExclamationCircle } from 'react-icons/fa';
+import { FaCheckCircle, FaExclamationCircle } from 'react-icons/fa';
+import { LuLoader2 } from "react-icons/lu";
 
 function ProviderMainPage() {
   const { profileData } = useContext(AuthContext);
   const [companyId, setCompanyId] = useState(null);
   const navigate = useNavigate();
+  const [deletedJobs, setDeletedJobs] = useState({});
   const queryClient = useQueryClient();
 
   useEffect(() => {
@@ -49,8 +51,9 @@ function ProviderMainPage() {
 
   const mutation = useMutation({
     mutationFn: deleteJob,
-    onSuccess: () => {
+    onSuccess: (data, variables) => {
       toast.success("Job post deleted successfully!");
+      setDeletedJobs((prev) => ({ ...prev, [variables]: true }));
       queryClient.invalidateQueries(['jobs', companyId]);
     },
     onError: (error) => {
@@ -156,7 +159,18 @@ function ProviderMainPage() {
                   onClick={() => handlePostDelete(job?.job_id)}
                 >
                   <IoTrash className="mr-1" />
-                  Delete
+                  {
+                    mutation.isLoading && mutation.variables === job.job_id && (
+                      <LuLoader2 className="animate-spin-slow" />
+                    )
+                  }
+                  {
+                    deletedJobs[job.job_id] ? (
+                      <FaCheckCircle className="text-black" />
+                    ) : (
+                      "Delete"
+                    )
+                  }
                 </button>
               </div>
             </div>
