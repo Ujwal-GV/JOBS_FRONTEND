@@ -144,10 +144,19 @@ const MobileNavBar = ({
   onClick = () => {}
 }) => {
   const navigate = useNavigate();
+  const authToken = localStorage.getItem("authToken");
 
   return (
     <div className="w-full">
       {menuItem.map((d, idx) => {
+        if (
+            (
+              d.title === "Logout" 
+              || d.title == "Post Job" 
+              || d.title == "Profile") 
+          && !authToken) 
+          return null;
+
         return (
           <div
             key={idx}
@@ -177,6 +186,20 @@ const MobileNavBar = ({
           </div>
         );
       })}
+
+      {/* Show SignIn if no token is present */}
+      {!authToken && (
+        <div
+          className="p-1 cursor-pointer relative flex center h-10 hover:bg-orange-100 rounded-md duration-700"
+          onClick={() => {
+            setSelectedMenu(null);
+            navigate("/login");
+            onClick();
+          }}
+        >
+          Sign In
+        </div>
+      )}
     </div>
   );
 };
