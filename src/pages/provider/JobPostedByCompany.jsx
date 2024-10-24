@@ -24,7 +24,7 @@ const JobPostedByCompany = () => {
     }, [companyId, queryClient]);
 
     const fetchCompanyData = async () => {
-        const res = await axios.get(`http://localhost:8087/provider/${companyId}`);
+        const res = await axiosInstance.get(`/provider/${companyId}`);
         return res.data;
     };
 
