@@ -3,6 +3,8 @@ import Skeleton from "react-loading-skeleton";
 
 const CompanyCard = ({ data }) => {
   const { img, company_name = " ", _id = "", company_id } = data;
+  console.log(data);
+  
   return (
     <div
       onClick={() =>{window.open(`/user/company/${company_id}`, '_blank');}}
@@ -10,7 +12,7 @@ const CompanyCard = ({ data }) => {
       className="company-card relative w-[180px] md:w-[200px] h-[160px] md:h-[180px] bg-white border-gray flex flex-col center  rounded-lg m-3 p-3 cursor-pointer duration-800 "
     >
       <img
-        src={img?.url}
+        src={img?.url || img}
         loading="lazy"
         alt=""
         className="w-[40%] h-[40%] mx-auto border border-gray-400 rounded-lg p-1"

@@ -31,7 +31,7 @@ const JobCard = ({ data }) => {
         </div>
       )}
       <img
-        src={provider_info?.img?.url}
+        src={provider_info?.img}
         alt=""
         className=" w-[30%] md:w-[38%] h-[30%] md:h-[38%] rounded-lg border-gray job-card-img"
       />
