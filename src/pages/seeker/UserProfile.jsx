@@ -246,6 +246,7 @@ const UserProfile = () => {
       setProfileImg(variables);
     },
     onError: (error) => {
+      console.log(error);
       const { message } = getError(error);
       if (message) {
         toast.error(message);
