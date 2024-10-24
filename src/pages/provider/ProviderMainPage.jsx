@@ -5,10 +5,10 @@ import { AuthContext } from "../../contexts/AuthContext";
 import { axiosInstance } from "../../utils/axiosInstance";
 import JobCard, { JobCardSkeleton } from "../../components/JobCard";
 import SeachInput from "../../components/SeachInput";
-import { FaCheckCircle, FaEye } from "react-icons/fa6";
+import { FaEye } from "react-icons/fa6";
 import { IoTrash } from "react-icons/io5";
 import toast from "react-hot-toast";
-import { FaExclamationCircle } from 'react-icons/fa';
+import { FaCheckCircle, FaExclamationCircle } from 'react-icons/fa';
 
 function ProviderMainPage() {
   const { profileData } = useContext(AuthContext);
