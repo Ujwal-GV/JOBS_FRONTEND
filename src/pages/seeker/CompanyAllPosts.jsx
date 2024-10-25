@@ -149,9 +149,7 @@ export const JobPostContainer = ({ cardClassname, companyId }) => {
   // Fetch Jobs
   const fetchJobs = async ({ queryKey }) => {
     const currentPage = queryKey[1]; // Extract current page
-    const res = await axios.get(
-      `http://localhost:8087/jobs/?provider_details=${companyId}&limit=10&page=${currentPage}`
-    );
+    const res = await axiosInstance.get(`/jobs/?provider_details=${companyId}&limit=10&page=${currentPage}`);
     setTotalDatas(res.data.searchdatas);
     return res.data;
   };
