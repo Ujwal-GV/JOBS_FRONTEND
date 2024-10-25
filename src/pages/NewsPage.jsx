@@ -26,6 +26,8 @@ const NewsPage = () => {
     const res = await axios.get(
       `https://newsapi.org/v2/top-headlines?category=${category}&pageSize=20&apiKey=${newsAPIkey}`
     );
+    console.log(res.data.articles);
+    
     return res.data.articles;
   };
 
@@ -45,6 +47,8 @@ const NewsPage = () => {
   console.log(isLoading, isFetching);
 
   if (isError) {
+    console.log(error);
+    
     const { message } = error;
     toast.error(message);
     return <></>;
