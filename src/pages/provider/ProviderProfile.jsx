@@ -325,6 +325,11 @@ const ProviderProfile = () => {
                 title="No. of Employees"
                 val={2001}
               />
+              <DeatilsBadge
+                icon={<BiGroup className="text-orange-600" />}
+                title="Followers"
+                val={profileData?.followers?.length || 0}
+              />
             </div>
   
             <div className="w-full  h-80 max-w-[90%] md:w-full mx-auto mt-4 flex flex-col lg:flex-row gap-2">
