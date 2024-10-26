@@ -320,11 +320,11 @@ const ProviderProfile = () => {
                 val={profileData?.job_details?.jobs?.length || 0}
                 onClick={() => navigate(`/provider/jobs-posted/${personalDetails.company_id}`)}
               />
-              <DeatilsBadge
+              {/* <DeatilsBadge
                 icon={<BiGroup className="text-orange-600" />}
                 title="No. of Employees"
                 val={2001}
-              />
+              /> */}
               <DeatilsBadge
                 icon={<BiGroup className="text-orange-600" />}
                 title="Followers"
